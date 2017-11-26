@@ -55,7 +55,7 @@ Use the `trust` command to trust the imported public key with `Ultimate` trust. 
 
 Do not create a new SSH key-pair. Instead, do the following (assuming you have already [setup your Yubikey](https://github.com/drduh/YubiKey-Guide) to include your private key material with the standard three subkeys):
 
-1. Add the following to your .bashrc file:
+1. Add the following to your .bashrc file from the SSH section in `man gpg-agent`:
 
 ```bash
 export GPG_TTY=$(tty)
