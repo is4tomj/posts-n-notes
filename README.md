@@ -75,7 +75,7 @@ $ ssh-add -L
 4. Paste the output into your SSH keys on GitHub or into your `authorized_keys` file on whatever server you're trying to access.
 
 **NOTE:**
-> If you setup your Yubikey to require a touch before performing any cryptographic operation, then you will need to touch your Yubikey when you ssh, scp, or clone/pull/push on GitHub.
+> If you setup your Yubikey to require a touch before performing any cryptographic operation, then you will need to touch your Yubikey when you perform an ssh or scp operation (including git clone/pull/push on GitHub).
 
 
 
