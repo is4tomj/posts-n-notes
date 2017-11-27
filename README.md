@@ -37,7 +37,7 @@ I use the following [gpg.conf](/gpg.conf) and [gpg-agent.conf](/gpg-agent.conf).
 Import the public key using either a keyserver or an exported, armored key: 
 
 ```bash
-$ gpg2 --recv-keys 0xYOURKEYID
+$ gpg2 --recv 0xKEYID
 ```
 
 Trust your public key using executing the following:
