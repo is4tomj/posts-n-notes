@@ -59,6 +59,20 @@ Do not create a new SSH key-pair. Instead, do the following (assuming you have a
 
 ```bash
 export GPG_TTY=$(tty)
+
+if [ ! -f /tmp/gpg-agent.env ]; then
+
+    GPGAGENTPID=$(pgrep gpg-agent)
+    if [ GPGAGENTPID -gt 0 ]; then
+	echo "Killing gpg-agent."
+	killall gpg-agent;
+    fi
+    
+    eval $(gpg-agent --daemon --enable-ssh-support > /tmp/gpg-agent.env);
+fi
+. /tmp/gpg-agent.env
+
+
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
