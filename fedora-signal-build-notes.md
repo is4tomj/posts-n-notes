@@ -1,4 +1,4 @@
-# Signal (including npm and nodejs)
+# Signal-Desktop (including npm and nodejs)
 
 A dnf package for Signal-Desktop is not available yet. So we have to do things the hard way.
 

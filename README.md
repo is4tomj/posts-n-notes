@@ -5,7 +5,6 @@ This somewhat of a blog.
 
 ## Fedora 27 configuration notes
 
-
 - Install and configure IDE
 
 ```bash
