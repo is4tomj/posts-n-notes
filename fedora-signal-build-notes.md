@@ -1,4 +1,4 @@
-# Signal-Desktop (including npm and nodejs)
+# Install Signal-Desktop on Fedora 27 (including npm and nodejs)
 
 A dnf package for Signal-Desktop is not available yet. So we have to do things the hard way.
 
