@@ -21,7 +21,9 @@ EOF
 
 - Install [Signal-Desktop](/fedora-signal-build-notes.md) (including npm and nodejs)
 
+## USPTO stuff
 
+- [Filing Checklists](/USPTO/filing-checklists.md)
 
 ## Random helpful resources
 
