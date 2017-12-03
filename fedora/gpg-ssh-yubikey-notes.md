@@ -38,7 +38,7 @@ export GPG_TTY=$(tty)
 if [ ! -f /tmp/gpg-agent.env ]; then
 
     GPGAGENTPID=$(pgrep gpg-agent)
-    if [ GPGAGENTPID -gt 0 ]; then
+    if [ $GPGAGENTPID -gt 0 ]; then
 	echo "Killing gpg-agent."
 	killall gpg-agent;
     fi
@@ -52,7 +52,14 @@ unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
+
+echo "gpg-connect-agent updatestartuptty /bye: $(gpg-connect-agent updatestartuptty /bye)"
+
 ```
+
+NOTE: Per man gpg-agent, in  case  the  gpg-agent  receives a signature request, the user might need to be prompted for a passphrase, which is necessary for decrypting the stored key.  Since  the ssh-agent  protocol  does  not  contain  a mechanism for telling the agent on which display/terminal it is running, gpg-agent's ssh-support will use the TTY or X display where gpg-agent  has  been  started.  To switch this display to the current one, the following command may be used:
+gpg-connect-agent updatestartuptty /bye
+
 
 2. Open a new terminal and run the following:
 ```bash
