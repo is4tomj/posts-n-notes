@@ -32,3 +32,12 @@ Uncomment or add the following lines:
 ### Signal
 
 - Install [Signal-Desktop](signal-build-notes.md) (including npm and nodejs)
+
+
+## Permanantly disable touch screen
+
+```bash
+$ sudo emacs /usr/share/X11/xorg.conf.d/10-evdev.conf
+```
+
+add `Option "Ignore" "on"` in the `InputClass` for the touch screen.
