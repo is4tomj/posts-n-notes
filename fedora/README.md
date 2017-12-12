@@ -43,3 +43,11 @@ $ sudo emacs /usr/share/X11/xorg.conf.d/10-evdev.conf
 ```
 
 add `Option "Ignore" "on"` in the `InputClass` for the touch screen.
+
+## Useful commands
+
+```bash
+$ xdg-open # opens a file or URL in the user's preferred application
+
+$ tail ~/.bash_history # view the last n commands
+```
