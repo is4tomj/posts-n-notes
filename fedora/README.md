@@ -49,5 +49,5 @@ add `Option "Ignore" "on"` in the `InputClass` for the touch screen.
 ```bash
 $ xdg-open # opens a file or URL in the user's preferred application
 
-$ tail ~/.bash_history # view the last n commands
+$ tail -n X ~/.bash_history # view the last X commands
 ```
