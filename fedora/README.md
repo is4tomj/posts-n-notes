@@ -15,8 +15,10 @@ EOF
 ```
 
 ## Turn off Bluetooth, WIFI, and WWAN on Shutdown and Startup
+
 ```bash
-$ sudo 
+$ sudo emacs -nw /etc/default/tlp
+```
 
 Make sure the following line is set to zero:
 `RESTORE_DEVICE_STATE_ON_STARTUP=0`
