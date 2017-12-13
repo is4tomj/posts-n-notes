@@ -27,6 +27,17 @@ Uncomment or add the following lines:
 `DEVICES_TO_DISABLE_ON_STARTUP="bluetooth wifi wwan"`
 `DEVICES_TO_DISABLE_ON_SHUTDOWN="bluetooth wifi wwan`
 
+
+## Enable/Disable wifi card
+
+Add the following to `.bashrc` to add commands to enable or disable wifi
+
+```bash
+alias disable-intenal-wifi="sudo ifconfig wlp2s0 down" # disable
+alias enable-intenal-wifi="sudo ifconfig wlp2s0 up" # enable
+```
+
+
 ### Crypto/Security stuff
 
 - Install/configure [GPG and SSH using Yubikey or hardware token](gpg-ssh-yubikey-notes.md)
