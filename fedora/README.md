@@ -44,7 +44,7 @@ $ nmcli connection show "<name of wifi or wired connection point>"
 Set the connection to stable or random. "stable" will create a random MAC to connect to a network, but use the same MAC each time the NetworkManager connects to the network. "random" will always create a new random MAC every time a connection is made to the network.
 
 ```bash
-$ nmcli connection modify "<name connection point>"
+$ nmcli connection modify "<name connection point>" wifi.clone-mac-address stable|random
 ```
 
 Connect to the connection point
@@ -53,7 +53,7 @@ Connect to the connection point
 $ nmcli connection up "<name of connection point>"
 ```
 
-See [this](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0) for more info.
+See the [nmcli Reference Manual](https://developer.gnome.org/NetworkManager/stable/nmcli.html) for more info, and [this helpful blog](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0).
 
 
 ## Enable/Disable wifi card
