@@ -27,6 +27,34 @@ Uncomment or add the following lines:
 `DEVICES_TO_DISABLE_ON_STARTUP="bluetooth wifi wwan"`
 `DEVICES_TO_DISABLE_ON_SHUTDOWN="bluetooth wifi wwan`
 
+## Set a random MAC address for a NIC using NetworkManager's cli ("nmcli")
+
+If the name of the wifi or wired connection is unknown or unclear, you can list the names using this command:
+
+```bash
+$ nmcli device wifi list
+```
+
+To make sure that you are configuring the connection for the intended network, run the following command:
+
+```bash
+$ nmcli connection show "<name of wifi or wired connection point>"
+```
+
+Set the connection to stable or random. "stable" will create a random MAC to connect to a network, but use the same MAC each time the NetworkManager connects to the network. "random" will always create a new random MAC every time a connection is made to the network.
+
+```bash
+$ nmcli connection modify "<name connection point>"
+```
+
+Connect to the connection point
+
+```bash
+$ nmcli connection up "<name of connection point>"
+```
+
+See [this](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0) for more info.
+
 
 ## Enable/Disable wifi card
 
