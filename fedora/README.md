@@ -47,6 +47,12 @@ If the name of the wifi or wired connection is unknown or unclear, you can list 
 $ nmcli device wifi list
 ```
 
+Run the following to see all the wireless network that the NIC has connected to. This command gives more specific names for connections, such as "<SSID> num":
+
+```bash
+$ nmcli connection show
+```
+
 To make sure that you are configuring the connection for the intended network, run the following command:
 
 ```bash
@@ -56,7 +62,7 @@ $ nmcli connection show "<name of wifi or wired connection point>"
 Set the connection to stable or random. "stable" will create a random MAC to connect to a network, but use the same MAC each time the NetworkManager connects to the network. "random" will always create a new random MAC every time a connection is made to the network.
 
 ```bash
-$ nmcli connection modify "<name connection point>" wifi.clone-mac-address stable|random
+$ nmcli connection modify "<name connection point>" wifi.cloned-mac-address stable|random
 ```
 
 Connect to the connection point
