@@ -14,7 +14,19 @@ $ cat << EOF >  ~/.emacs.d/init.el
 EOF
 ```
 
-## Turn off Bluetooth, WIFI, and WWAN on Shutdown and Startup
+## Setup TLP
+
+```bash
+$ sudo dnf install tlp tlp-stat
+```
+
+To make sure things are running correctly, use the following command:
+
+```bash
+$ sudo tlp-stat -s
+```
+
+### Turn off Bluetooth, WIFI, and WWAN on Shutdown and Startup
 
 ```bash
 $ sudo emacs -nw /etc/default/tlp
