@@ -41,6 +41,27 @@ Uncomment or add the following lines:
 
 ## Set a random MAC address for a NIC using NetworkManager's cli ("nmcli")
 
+Set the global the wifi mac address to be random by default by creating a new config file named `/etc/NetworkManager/conf.d/30-mac-randomization.conf`:
+
+```config
+# Custom configuration file for NetworkManager.
+# I named this 30-mac-randomization.conf so that other configurations
+# can be sent before or after this, e.g.,29-[[filename]].
+
+# More general details at https://developer.gnome.org/NetworkManager/stable/NetworkManager.conf.html#id-1.2.5.11
+
+# The following configurations were discussed at https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/
+
+[device-mac-randomization]
+wifi.scan-rand-mac-address=yes
+
+[connection-mac-randomization]
+ethernet.cloned-mac-address=random
+wifi.cloned-mac-address=random
+
+```
+
+
 If the name of the wifi or wired connection is unknown or unclear, you can list the names using this command:
 
 ```bash
@@ -69,6 +90,12 @@ Connect to the connection point
 
 ```bash
 $ nmcli connection up "<name of connection point>"
+```
+
+or
+
+```bash
+$ nmcli device wifi connect <SSID-name> password <password>
 ```
 
 See the [nmcli Reference Manual](https://developer.gnome.org/NetworkManager/stable/nmcli.html) for more info, and [this helpful blog](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0).
