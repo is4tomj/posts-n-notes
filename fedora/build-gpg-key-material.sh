@@ -1,8 +1,41 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 set -euo pipefail
 #set -euxo pipefail # to debug, uncomment this line, and comment out above line
 
+
+######################
+# Do some configuration and version checking
+######################
+
+KERNELNAME=$(uname -a)
+
+if [[ $KERNELNAME =~ ^Darwin ]];
+then
+    GPG=gpg
+
+    # Darwin needs this, otherwise tr cannot parse /dev/urandom.
+    export LC_ALL=C
+else
+    GPG=gpg2
+fi
+
+if [[ -n $(hash $GPG) ]];
+then
+    echo "Missing or cannot detect ${GPG}"
+    exit 1
+fi
+
+REQVERSION='2.2.1'
+GPGVERSION=$($GPG --version | grep -o -E 'gpg.*\d+\.\d+.\d+' | grep -o -E '\d+\.\d+\.\d+')
+echo "Version ${GPGVERSION}"
+if [[ "${GPGVERSION}" == "${REQVERSION}" ]];
+then
+    echo "Using $GPG version ${GPGVERSION}."
+else
+    echo "$GPG version ${GPGVERSION} is installed, but need version ${REQVERSION}"
+    exit 1
+fi
 
 ######################
 # Helpers
@@ -78,8 +111,6 @@ EOF
 # Run GPG commands
 ############################
 
-GPG=gpg2
-
 # Build primary key-pair
 $GPG --batch --full-generate-key $GPGKEYGENPARAMS
 
@@ -91,11 +122,17 @@ read -p "Copy/paste key fingerprint here: " FPR
 echo
 
 # Copy passphrase into clipboard for use to create subkeys and export keys
-echo $PASSPHRASE | xclip -i -r # primary (middle click) buffer
-echo $PASSPHRASE | xclip -selection c -r # clipboard
+if [[ $KERNELNAME =~ ^Darwin ]];
+then
+    echo $PASSPHRASE | pbcopy
+else
+    echo $PASSPHRASE | xclip -i -r # primary (middle click) buffer
+    echo $PASSPHRASE | xclip -selection c -r # clipboard
+fi
 echo "Copied passphrase into clipboard for the next commands."
 echo
 
+# Build subkeys
 echo "Building rsa4096 sign subkey."
 $GPG --quick-add-key "${FPR}" rsa4096 sign
 echo
