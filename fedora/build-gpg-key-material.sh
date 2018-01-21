@@ -18,12 +18,11 @@ rpass() {
 # Init directory and supporting documents
 ############################
 
-# create and change to tmp folder
+# Create and change to tmp folder
 export GNUPGHOME=$(mktemp -d) ; echo "Created new tmp directory: ${GNUPGHOME}"
 cd $GNUPGHOME
 
-# create gpg.conf for key gen
-
+# Create gpg.conf for key gen
 cat << EOF > $GNUPGHOME/gpg.conf
 use-agent
 personal-cipher-preferences AES256 AES192 AES CAST5
@@ -42,15 +41,16 @@ verify-options show-uid-validity
 with-fingerprint
 EOF
 
-# parameters for gpg
+# Get recipient/user for keys
 read -p "Recipient name: " NAME
 read -p "Recipient Email: " EMAIL
 echo
 
+# Generate symmetric key to protect private key
 export PASSPHRASE=$(rpass 64)
 
+# Create parameter file for generating primary key-pair
 GPGKEYGENPARAMS=$GNUPGHOME/gpg-key-gen.params
-
 cat << EOF > $GPGKEYGENPARAMS
 %echo Generating RSA 4096 key-pair
 Key-Type: RSA
@@ -80,13 +80,17 @@ EOF
 
 GPG=gpg2
 
+# Build primary key-pair
 $GPG --batch --full-generate-key $GPGKEYGENPARAMS
 
+# Print public key fingerprint
 $GPG --list-secret-keys "${EMAIL}"
 
+# Get public key fingerprint from user
 read -p "Copy/paste key fingerprint here: " FPR
 echo
 
+# Copy passphrase into clipboard for use to create subkeys and export keys
 echo $PASSPHRASE | xclip -i -r # primary (middle click) buffer
 echo $PASSPHRASE | xclip -selection c -r # clipboard
 echo "Copied passphrase into clipboard for the next commands."
@@ -104,7 +108,7 @@ echo "Building rsa4096 encr subkey."
 $GPG --quick-add-key "${FPR}" rsa4096 encr
 echo
 
-
+# Export keys
 ARMOREDPUBLICKEY=$GNUPGHOME/${EMAIL}-armored-pubkey.txt
 ARMOREDPRIVATEKEY=$GNUPGHOME/${EMAIL}-armored-privkey.txt
 ARMOREDSUBKEYS=$GNUPGHOME/${EMAIL}-armored-subkeys.txt
@@ -122,6 +126,7 @@ echo "Exporting passphrase."
 echo $PASSPHRASE > $PASSPHRASEFILE
 echo
 
+# Summary
 echo
 echo "Good news:"
 echo "  -Created primary key-pair and subkeys for ${EMAIL}."
