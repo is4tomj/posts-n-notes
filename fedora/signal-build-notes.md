@@ -13,7 +13,7 @@ Configure npm to run without sudo by following [these instructions on npmjs](htt
 ## Fresh build
 
 ```bash
-$ npm install --global electron-linux-installer
+$ npm install --g electron-linux-installer electron
 $ git clone git@github.com:WhisperSystems/Signal-Desktop.git
 $ cd Signal-Desktop
 $ npm install
