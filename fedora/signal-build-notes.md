@@ -28,6 +28,7 @@ $ ./release/linux-unpacked/signal-desktop
 $ git reset --hard HEAD # Get rid of some files that were generated from the previous build:
 $ git pull origin master # Get new version
 $ npm install
+$ npm install -g electron
 $ npm run icon-gen
 $ npm run build-release
 ```
