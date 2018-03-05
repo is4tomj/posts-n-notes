@@ -14,6 +14,8 @@ $ cat << EOF >  ~/.emacs.d/init.el
 EOF
 ```
 
+Update fedora's default editor to be emacs in window-less terminal mode by adding `export EDITOR="/usr/bin/emacs -nw"` to .bashrc.
+
 ## Setup TLP
 
 ```bash
