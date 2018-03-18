@@ -1,3 +1,19 @@
+
+### OpenSC
+
+Install the following:
+
+```bash
+$ sudo dnf install readline-devel openssl-devel libxslt docbook-style-xsl pcsc-lite-devel automake autoconf libtool gcc opensc
+```
+
+OpenSC will install several programs, such as pkcs11-switch, pkcs11-tool, pkcs15-crypt, pkcs15-init, pkcs15-tool.
+
+### Notes for OpenSC
+
+- Some [OpenSC documentation](https://github.com/OpenSC/OpenSC/wiki/Linux-Distributions).
+- Build Instructions for [OpenSC ](https://github.com/OpenSC/OpenSC/wiki/Compiling-and-Installing-on-Unix-flavors).
+
 ### GPG
 
 gpg and gpg2 seem to be installed by default. I still run the following:
@@ -23,8 +39,13 @@ $ gpg2 --edit-key <recipient>
 
 Use the `trust` command to trust the imported public key with `Ultimate` trust. Then run the `quit` command. After inserting the Yubikey with the corresponding private key material, `$ gpg2 --card-status` should indicate that the private key material is on the Yubikey.
 
+
 **Note:**
 >There are tons of web pages about using Yubikeys with Fedora, but they all seem to suck ass. The only on that appears to be good is from [Fedora Magazine](https://fedoramagazine.org/using-the-yubikey4-with-fedora/), which references [this Fedora Yubikey page](https://github.com/fedora-infra/ssh-gpg-smartcard-config/blob/master/YubiKey.rst).
+
+#### Touch
+
+You should require touch for crypto operations on your Yubikey, as described [here](https://github.com/drduh/YubiKey-Guide#requiring-touch-to-authenticate).
 
 #### SSH
 
