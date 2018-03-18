@@ -91,5 +91,18 @@ $ ssh-add -L
 
 4. Paste the output into your SSH keys on GitHub or into your `authorized_keys` file on whatever server you're trying to access.
 
+5. Prevent fingerprinting from untrusted ssh servers by running the following:
+
+```bash
+$ ssh-add -L | grep "cardno:00..." > ~/.ssh/id_rsa_yubikey.pub
+$ cat << EOF >> ~/.ssh/config
+IdentitiesOnly yes
+Host github.com
+    IdentityFile ~/.ssh/id_rsa_yubikey.pub
+EOF
+$ chmod 600 ~/.ssh/config
+```
+
+
 **NOTE:**
 > If you setup your Yubikey to require a touch before performing any cryptographic operation, then you will need to touch your Yubikey when you perform an ssh or scp operation (including git clone/pull/push on GitHub).
