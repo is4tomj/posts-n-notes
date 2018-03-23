@@ -16,11 +16,9 @@ Configure npm to run without sudo by following [these instructions on npmjs](htt
 $ npm install --g electron-linux-installer electron
 $ git clone git@github.com:WhisperSystems/Signal-Desktop.git
 $ cd Signal-Desktop
-$ npm install
-$ npm run icon-gen
-$ npm run build-release
-$ ./release/linux-unpacked/signal-desktop
 ```
+
+Finish fresh build by following the steps for updating.
 
 ## Updating
 
@@ -31,8 +29,10 @@ $ npm install
 $ npm install -g electron
 $ npm run icon-gen
 $ npm run build-release
+$ npm run dist-prod
+
 ```
 
-The binary is at the following path `./release/linux-unpacked/signal-desktop`.
+The binary is at the following path `./dist/linux-unpacked/signal-desktop`.
 
 
