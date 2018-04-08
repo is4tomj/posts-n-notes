@@ -5,7 +5,7 @@ A dnf package for Signal-Desktop is not available yet. So we have to do things t
 ## Pre-req
 
 ```bash
-$ sudo dnf install nodejs node-gyp dpkg fakeroot libXScrnSaver
+$ sudo dnf install nodejs node-gyp dpkg fakeroot libXScrnSaver rpm-build
 ```
 
 Configure npm to run without sudo by following [these instructions on npmjs](https://docs.npmjs.com/getting-started/fixing-npm-permissions). This is technically optional, but why tf would you not do this? Just kidding, I don't give a shit about your answer.
@@ -17,6 +17,9 @@ $ npm install --g electron-linux-installer electron
 $ git clone git@github.com:WhisperSystems/Signal-Desktop.git
 $ cd Signal-Desktop
 ```
+
+Edit the `package.json` scripts to include the following in the `scripts` section:
+`"dist-rpm": "npm run generate && SIGNAL_ENV=production npm run build -- --linux rpm",`
 
 Finish fresh build by following the steps for updating.
 
