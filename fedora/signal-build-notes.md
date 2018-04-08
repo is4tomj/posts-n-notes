@@ -30,9 +30,14 @@ $ npm install -g electron
 $ npm run icon-gen
 $ npm run build-release
 $ npm run dist-prod
-
+$ npm run dist-rpm
 ```
 
-The binary is at the following path `./dist/linux-unpacked/signal-desktop`.
+The binary is at `./dist/linux-unpacked/signal-desktop` and the rpm is at `./dist/signal-desktop-*.rpm`. You can run the following command:
+
+```bash
+$ sudo dnf install ./dist/signal-desktop-*.rpm
+```
+
 
 
