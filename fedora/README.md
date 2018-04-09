@@ -1,7 +1,7 @@
 Fedora 27 configuration notes
 =============
 
-## Install and configure IDE
+## Install and configure IDE (emacs)
 
 ```bash
 $ sudo dnf install emacs emacs-goodies
@@ -15,6 +15,8 @@ EOF
 ```
 
 Update fedora's default editor to be emacs in window-less terminal mode by adding `export EDITOR="/usr/bin/emacs -nw"` to .bashrc.
+
+See the following to add new packages to emacs: [http://ergoemacs.org/emacs/emacs_package_system.html](http://ergoemacs.org/emacs/emacs_package_system.html)
 
 ## Setup TLP
 
