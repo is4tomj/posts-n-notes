@@ -40,14 +40,14 @@ $ sudo dnf install yubikey-personalization-gui yubico-piv-tool yubico-piv-tool-d
 
 *Reset all PIV data*
 ```bash
-$ ykman reset
+$ ykman piv reset
 ```
 
 *Require touch*
 ```bash
-$ ykman openpgp touch aut
-$ ykman openpgp touch enc
-$ ykman openpgp touch sig
+$ ykman openpgp touch aut on
+$ ykman openpgp touch enc on
+$ ykman openpgp touch sig on
 ```
 
 ## If you do not want to be tracked by Yubico
@@ -57,8 +57,8 @@ $ ykman openpgp touch sig
 
 *Remove any preset configuration slots* 
 ```bash
-$ ykpersonalize -1 -z
-$ ykpersonalize -2 -z
+$ ykman slot delete 1
+$ ykman slot delete 2
 ```
 
 # Yubikey for Identification or Encryption
