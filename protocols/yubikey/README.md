@@ -31,7 +31,34 @@ Make sure that you have [upgraded your firmware](https://developers.yubico.com/y
 Download the `yubico-piv-tool`, `yubikey-personalization-gui` and while you're at it, the following packages.
 
 ```bash
-$ sudo dnf install yubico-piv-tool yubikey-personalization-gui readline-devel openssl-devel libxslt docbook-style-xsl pcsc-lite-devel automake autoconf libtool gcc opensc
+$ sudo dnf install yubikey-personalization-gui yubico-piv-tool yubico-piv-tool-devel yubikey-manager yubioath-desktop readline-devel openssl-devel libxslt docbook-style-xsl pcsc-lite-devel automake autoconf libtool gcc opensc
+```
+
+**Note** that pcsc-lite-devel is a Fedora library, so you will have to the corresponding library for your OS.
+
+## Everyone
+
+*Reset all PIV data*
+```bash
+$ ykman reset
+```
+
+*Require touch*
+```bash
+$ ykman openpgp touch aut
+$ ykman openpgp touch enc
+$ ykman openpgp touch sig
+```
+
+## If you do not want to be tracked by Yubico
+**Only if you don't want to use Yubico OTP**, which is the default for Configuration Slot 1. You can still use Yubico's OATH desktop application.
+
+**Note:** To my knowledge, you must use linux to use the ykpersonalize cli; otherwise, you need to use the Yubico Personalization GUI.
+
+*Remove any preset configuration slots* 
+```bash
+$ ykpersonalize -1 -z
+$ ykpersonalize -2 -z
 ```
 
 # Yubikey for Identification or Encryption
@@ -43,4 +70,17 @@ In addition to authentication, a Yubikey can be used as a Personal Identity and 
 A Yubikey can also be used for other cryptographic applications, such as an OpenPGP system. GnuPG, a program that implements OpenPGP protocol, supports Yubikeys out of the box. Some password managers, such as `pass`, use GnuPG to encrypt passwords on a local storage.
 
 
+# YubiKey PIV certs/keys
 
+
+
+# YubiKey for GnuPG and OpenPGP
+
+Use [build-gpg-key-material.sh](build-gpg-key-material.sh) to generate key material.
+
+If something goes wrong and you want to reset your PGP key material, pins, etc., then you can run [yubikey-gpg-reset.sh](yubikey-gpg-reset.sh). This cannot be undone so be sure you want to reset everything.
+
+# YubiKeys and Linux
+
+According to Yubico (see [this Post](https://developers.yubico.com/yubikey-personalization/USB-Hid-Issue.html)), YubiKeys can have a quirk with the usbhid module on Linux. The Post shows how to diagnose and fix the quirk.
+```

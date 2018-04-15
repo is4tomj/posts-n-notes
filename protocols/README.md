@@ -58,3 +58,8 @@ Proton Mail
 
 ## Payment
 
+## Yubikey 4 Identity v Security
+
+Many sites will allow users to use a Yubikey 4 as a second factor authentication using Yubico's OTP servers with an AES key loaded in Configuration Slot 1 and the card ID. A user can change the AES key used in Configuration Slot 1, but then the new AES key and Yubikey ID must be sent to Yubico, which will give Yubico, among other things, your IP address and MAC address. If Yubico records which Yubikeys go to which customers, then Yubico will know every website you authenticate and when you authenticate with them. As far as I am aware, no other Yubico resources would allow Yubico to track users that order keys.
+
+**Solution:** use a Yubikey that Yubico can associate with your PII, and a second Yubikey for security that does not use Configured Slot 1 for Yubico's OTP service. To ensure that a Yubikey cannot be used for anything but crypto operations, a user may set the [mode](https://developers.yubico.com/yubikey-personalization/Manuals/ykpersonalize.1.html#_yubikey_3_0_and_above) of the YubiKey to only include OTP and CCID run `$ ykpersonalize -m82`. **NOT TESTED**
