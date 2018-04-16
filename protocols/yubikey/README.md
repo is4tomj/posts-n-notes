@@ -50,6 +50,19 @@ $ ykman openpgp touch enc on
 $ ykman openpgp touch sig on
 ```
 
+## OATH (like Google Auth or Authy) setup and use
+
+You can use `yubioath-desktop` or continue to use `ykman`.
+
+**Add**
+```bash
+$ ykman oath add --touch <name> <secret>
+```
+**Get OATH code**
+```bash
+$ ykman oath code <name>
+```
+
 ## If you do not want to be tracked by Yubico
 **Only if you don't want to use Yubico OTP**, which is the default for Configuration Slot 1. You can still use Yubico's OATH desktop application.
 
