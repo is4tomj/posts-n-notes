@@ -1,4 +1,4 @@
-Fedora 27 configuration notes
+Fedora 27 and 28 configuration notes
 =============
 
 ## Install and configure IDE (emacs)
@@ -139,7 +139,18 @@ $ xdg-open # opens a file or URL in the user's preferred application
 
 $ tail -n X ~/.bash_history # view the last X commands
 ```
-## Reset USB
+## Fix pcscd
 
-The following [script](resetUSB.sh) resets the USB ports when they don't seem to be working. The script is from [this](https://enc.com.au/2014/02/14/resetting-usb-devices/).
+After install Fedora 28, the following Fedora 27 fix does not work. The following command does appear to fix the issue. This is probably a better fix and would probably work in Fedora 27 too.
+
+```bash
+$ sudo systemctl restart pcscd
+```
+
+
+While using Fedora 27, gpg2 could not find my Yubikey 4. I would use the following fix, which seemed to resolve the problem.
+
+> The following [script](resetUSB.sh) resets the USB ports when they don't seem to be working. The script is from [this](https://enc.com.au/2014/02/14/resetting-usb-devices/).
+
+
 
