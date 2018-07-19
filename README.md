@@ -3,6 +3,8 @@ Posts-n-Notes
 
 This somewhat of a blog.
 
+## [Resume](resume.md)
+
 ## Linux stuff
 
 - [Fedora 27 install and configuration notes](fedora/README.md)
