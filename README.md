@@ -1,8 +1,6 @@
 Posts-n-Notes
 ===========
 
-This somewhat of a blog.
-
 * [Resume](resume.md)
 
 ## Linux stuff
