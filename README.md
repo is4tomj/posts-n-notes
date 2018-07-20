@@ -3,7 +3,7 @@ Posts-n-Notes
 
 This somewhat of a blog.
 
-[Resume](resume.md)
+* [Resume](resume.md)
 
 ## Linux stuff
 
