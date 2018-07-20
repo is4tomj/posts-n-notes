@@ -17,10 +17,10 @@ Software Engineer, Cymphonix. Develop database architecture within a high perfor
 - Research Assistant, Scientific Computing & Imaging Institute. Develop real-time 3D and image/signal processing applications for medical imaging and realistic ray-tracing using shared and distributed memory supercomputers. Publications available upon request.
 
 ## Publications
-- Sergerio Vasquez, Ali Bahadur, **J. Thomas Johnson**, David R. Rodriguez, Charles Keller. *Severe Runting of a Laboratory Mouse (mus musculus)*. Lab Anim (NY). 2007 Jan;36(1):19, 22-3.
-- **Johnson JT**, Hansen MS, Wu I, Healy LJ, Johnson CR, et al. 2006 *Virtual Histology of Transgenic Mouse Embryos for High-Throughput Phenotyping*; PLoS Genet 2(4): e61. doi:10.1371/journal.pgen.0020061.
-- Browd S, Healy LJ, Dobie G, **Johnson JT**, Jones GM, Rodriguez LF, Brockmeyer DL., *Morphometric and Qualitative Analysis of Congenital Occipitocervical Instability in Children: Implications for Patients with Down syndrome*; J Neurosurg 105:50–54, 2006.
-- S.D. Ramsey, **J.T. Johnson**, C. Hansen. *Adaptive Temporal Tone Mapping*, Computer Graphics and Imaging, 2004.
+- Sergerio Vasquez, Ali Bahadur, **J. Thomas Johnson**, David R. Rodriguez, Charles Keller. *[Severe Runting of a Laboratory Mouse (mus musculus)](https://www.ncbi.nlm.nih.gov/pubmed/17183339)*. Lab Anim (NY). 2007 Jan;36(1):19, 22-3. Also published in [Nature Lab Animal](https://www.nature.com/articles/laban0107-19).
+- **Johnson JT**, Hansen MS, Wu I, Healy LJ, Johnson CR, et al. 2006 *[Virtual Histology of Transgenic Mouse Embryos for High-Throughput Phenotyping](https://www.ncbi.nlm.nih.gov/pubmed/16683035)*; PLoS Genet 2(4): e61. doi:10.1371/journal.pgen.0020061.
+- Browd S, Healy LJ, Dobie G, **Johnson JT**, Jones GM, Rodriguez LF, Brockmeyer DL., *[Morphometric and Qualitative Analysis of Congenital Occipitocervical Instability in Children: Implications for Patients with Down syndrome](https://www.ncbi.nlm.nih.gov/pubmed/16871870)*; J Neurosurg 105:50–54, 2006.
+- Ramsey, S. D., **Johnson, J. T.**, & Hansen, C. (2004). *[Adaptive Temporal Tone Mapping](https://www.actapress.com/Abstract.aspx?paperId=16914)*. In M. H. Hamza (Ed.), Proceedings of the Seventh IASTED International Conference on Computer Graphics and Imaging (pp. 124-128).
 - **J.T. Johnson III**, Steven G. Parker, *Adaptive Temporal Tone Mapping*; Posters on the Hill, 2004.
 
 ## Bar Admissions
