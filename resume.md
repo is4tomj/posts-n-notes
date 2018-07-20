@@ -16,6 +16,13 @@ Software Engineer, Cymphonix. Develop database architecture within a high perfor
 - 3D Engineer, SportVision. Developing video real-time 3D rendered reconstructions of live NASCAR races, interfacing with proprietary distributed GPS-based systems and integrating high-res track surveys.
 - Research Assistant, Scientific Computing & Imaging Institute. Develop real-time 3D and image/signal processing applications for medical imaging and realistic ray-tracing using shared and distributed memory supercomputers. Publications available upon request.
 
+## Publications
+- Sergerio Vasquez, Ali Bahadur, **J. Thomas Johnson**, David R. Rodriguez, Charles Keller. *Severe Runting of a Laboratory Mouse (mus musculus)*. Lab Anim (NY). 2007 Jan;36(1):19, 22-3.
+- **Johnson JT**, Hansen MS, Wu I, Healy LJ, Johnson CR, et al. 2006 *Virtual Histology of Transgenic Mouse Embryos for High-Throughput Phenotyping*; PLoS Genet 2(4): e61. doi:10.1371/journal.pgen.0020061.
+- Browd S, Healy LJ, Dobie G, **Johnson JT**, Jones GM, Rodriguez LF, Brockmeyer DL., *Morphometric and Qualitative Analysis of Congenital Occipitocervical Instability in Children: Implications for Patients with Down syndrome*; J Neurosurg 105:50–54, 2006.
+- S.D. Ramsey, **J.T. Johnson**, C. Hansen. *Adaptive Temporal Tone Mapping*, Computer Graphics and Imaging, 2004.
+- **J.T. Johnson III**, Steven G. Parker, *Adaptive Temporal Tone Mapping*; Posters on the Hill, 2004.
+
 ## Bar Admissions
 - California, 2012
 - USPTO, 2011 
