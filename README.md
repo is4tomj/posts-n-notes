@@ -7,8 +7,9 @@ Posts-n-Notes
 
 - [Fedora 27 install and configuration notes](fedora/README.md)
 
-## USPTO stuff
+## USPTO and Patent stuff
 
+- Posts regarding patents
 - [Filing Checklists](/USPTO/filing-checklists.md)
 
 ## Random helpful resources

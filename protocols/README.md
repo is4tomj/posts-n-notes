@@ -7,7 +7,7 @@ Identification + Anonymity
 
 ## Warning
 
-Security is not a state. Security is a journey. You will do something wrong the first time you try new protocol.
+Security is not a state. Security is a journey. You will do something wrong the first time you try a new protocol.
 
 ## Definitions
 
@@ -15,17 +15,13 @@ Security is not a state. Security is a journey. You will do something wrong the 
 
 A *hardware token* (HT) is a device that can be used for strong authentication and identification. A Yubikey is a HT.
 
-A *software token* (ST) is a software-based method of authentication, such as an TOTP or HOTP-based authenticator like Google Authenticator or Authy.
-
-## Rules
-
-1. Never use your HT for an account or service that has your PII.
+A *software token* (ST) is a software-based method of authentication, such as an TOTP or HOTP-based authenticator like Google Authenticator or Authy.s
 
 ## Password managers
 
 I want a password manager that is (1) portable, (2) uses asymmetric encryption of the stored data, and (3) requires a symmetric key to access the vault.
 
-The best solution I have found so far is *Pass*. *Pass* is nice because it uses GnuPG to encrypt passwords. Furthermore, you can save files and notes in the vault. The two things I don't like about *Pass*:
+The best solution I have found so far is *Pass*. Although *Pass* does not encrypt the vault, *Pass* is nice because it uses GnuPG to encrypt passwords. Furthermore, you can save files and notes in the vault. The two things I don't like about *Pass*:
 - *Pass* uses GnuPG instead of OpenSSL to encrypt data and files.
 - *Pass* does not have an encrypted vault, so account and file names in the clear.
 
