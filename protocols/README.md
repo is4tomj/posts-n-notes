@@ -7,7 +7,7 @@ Identification + Anonymity
 
 ## Warning
 
-Security is not a state. Security is a journey. You will do something wrong the first time you try a new protocol.
+Security is not a state. Security is a journey. You must assess what your more pressing, known, solvable security threat is and lock that down next. Do not get discouraged. You will do something wrong the first time you try a new protocol.
 
 ## Definitions
 
@@ -48,9 +48,15 @@ Proton Mail
 
 ## Messaging
 
+[Keybase.io] allows people to share files securely. 
+
 ## Blogging
 
+Github
+
 ## File sharing
+
+[Keybase.io] allows people to share files securely. 
 
 ## Payment
 
