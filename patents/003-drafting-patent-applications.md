@@ -5,10 +5,10 @@ Properties of a Well-Written Draft Patent Application
 
 A patent application should be, in order of priority:
 
-0. Technically correct,
-0. Drafted according to legal requirements,
-0. Easy for the inventors to read,
-0. Easy for potential judges and jurors to read.
+1. Technically correct,
+1. Drafted according to legal requirements,
+1. Easy for the inventors to read,
+1. Easy for potential judges and jurors to read.
 
 Adhering the rules below will help you to prepare an application that has the above properties.
 
