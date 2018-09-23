@@ -18,6 +18,13 @@ Update fedora's default editor to be emacs in window-less terminal mode by addin
 
 See the following to add new packages to emacs: [http://ergoemacs.org/emacs/emacs_package_system.html](http://ergoemacs.org/emacs/emacs_package_system.html)
 
+## Setup and check CPU heat sensors
+
+```bash
+$ sudo dnf install lm_sensors lm_sensors-sensord
+$ watch -n 2 sensors
+```
+
 ## Setup TLP
 
 ```bash
