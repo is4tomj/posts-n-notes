@@ -1,0 +1,138 @@
+call pathogen#infect()
+filetype plugin indent on
+set nocompatible
+
+set modelines=0
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+set encoding=utf-8
+set scrolloff=3
+set autoindent
+set showmode
+set showcmd
+set wildmenu
+set wildmode=list:longest
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+set number
+
+" make it so vim can dumbly paste swaths of code:
+set pastetoggle=<F2>
+
+let mapleader = ","
+
+" undo awesomeness:
+nnoremap <F5> :UndotreeToggle<CR>
+set undofile
+set undodir=~/.vim/undo
+set undolevels=10000
+set undoreload=100000
+" make vim's history large
+set history=10000
+set backup
+set backupdir=/tmp/
+
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+
+au FileType python set cc=80
+" break lines in narrow window on words rather than on chars
+set lbr
+" only one space after punctuation on line joins:
+set nojoinspaces
+
+" cleverly traverse wrapped lines:
+nnoremap j gj
+nnoremap k gk
+
+" if you want more of a textmate feel, enable this:
+"set list
+set listchars=tab:▸\ ,trail:-,eol:¬
+
+" this will save my tendons:
+nnoremap ; :
+
+" one-keystroke window moves:
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-n> :bnext<cr>
+nnoremap <c-p> :bprev<cr>
+
+" shortcuts for tab moves:
+nnoremap <c-]> gt
+nnoremap <c-[> gT
+
+" this allows me to use sudo when writing a file i opened as not-root
+" this was something Stephen had, but I don't think I love the idea of this
+"command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+
+"remember place in last edited file:
+autocmd BufReadPost *
+ \ if line("'\"") > 0 && line("'\"") <= line("$") |
+ \ exe "normal g`\"" |
+ \ endif
+
+
+" spelling helps:
+cnoreabbrev Make make
+cnoreabbrev mke make
+cnoreabbrev mak make
+
+" Colors!
+syntax on
+set background=dark
+set t_Co=256
+let g:solarized_termcolors=256
+let g:solarized_contrast="medium"
+colorscheme solarized8
+
+" leader key map for stripping whitespace:
+nnoremap <leader>ws :%s/\s\+$//e<CR>
+
+nnoremap <leader>gt :GoTest<cr>
+nnoremap <leader>gr :GoReferrers<cr>
+nnoremap <leader>gc :GoCoverageToggle<cr>
+nnoremap <leader>gi :GoImplements<cr>
+nnoremap <leader>gv :GoVet<cr>
+nnoremap <leader>gl :GoLint<cr>
+
+" - just stuff I like:
+au FileType gitcommit set tw=72
+
+au FileType go setl noet ts=4 tw=0 makeprg=go\ install\ -v\ ./...
+au FileType go set nowrap
+au FileType go abbr lpf log.Printf("%+v",
+au FileType go abbr iferr if err != nil {<CR>}<Esc>O
+au BufRead,BufNewfile *_test.go abbr lpf t.Logf("%v", 
+
+au BufRead,BufNewFile *.md set makeprg=md\ %
+
+let g:go_fmt_command = "goimports"
+
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_types = 1
+
+set statusline=%f\ %y\ %{fugitive#statusline()}
+
+nnoremap <leader>date o<cr>## <esc>:pu=strftime('%Y-%m-%d')<cr>kJo

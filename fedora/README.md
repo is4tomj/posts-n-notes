@@ -1,7 +1,13 @@
 Fedora 27 and 28 configuration notes
 =============
 
-## Install and configure IDE (emacs)
+## Install and configure IDE
+
+### vim
+
+- [.vimrc](/vimrc) file
+
+### emacs
 
 ```bash
 $ sudo dnf install emacs emacs-goodies
